@@ -95,13 +95,11 @@
     </div>
 <script src="data.js"></script>
 <script>
-    document.getElementById('시가총액').innerHTML = '시가총액 : ' + 시가총액
-    document.getElementById('시가총액순위').innerHTML = '시가총액순위 : ' + 시가총액순위
-    document.getElementById('상장주식수').innerHTML = '상장주식수 : ' + 상장주식수
-    document.getElementById('배당수익률').innerHTML = '배당수익률 : ' + 배당수익률
-    document.getElementById('매출').innerHTML = '매출 : ' + 매출
-    document.getElementById('비용').innerHTML = '비용 : ' + 비용
-    document.getElementById('순익').innerHTML = '순익 : ' + 순익
+    document.getElementById('시가총액').innerHTML = '시가총액 : ' + a
+    document.getElementById('시가총액순위').innerHTML = '시가총액순위 : ' + b
+    document.getElementById('상장주식수').innerHTML = '상장주식수 : ' + c
+    document.getElementById('배당수익률').innerHTML = '배당수익률 : ' + d
+   
 
     let tableBodyData = [];
     for (let variable of data) {
