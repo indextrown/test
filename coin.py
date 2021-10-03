@@ -5,7 +5,7 @@ def get_target_price():  #목표가를 반환하는 함수  함수의 정의
   df = pybithumb.get_ohlcv("BTC") #비트코인의 ohlcv값 가져옴
   변동폭 = df.iloc[-2]['high'] - df.iloc[-2]['low']
   목표가 = df.iloc[-1]['open'] + 변동폭
-  return 목표가
+  return 0
 #매수기능
 def buy_cryto_currency(bithumb, price): #전달받은 빗썸 객체 함수 안에서 밸런스 조회 가능
   krw = bithumb.get_balance("BTC")[2]  #보유한 한화
@@ -30,7 +30,7 @@ while True:
 
 
   
-  if 목표가 < price and hold_flag == False:#조건을 총족하면 매수
+  if 목표가 <= price and hold_flag == False:#조건을 총족하면 매수
   
     ret = buy_cryto_currency(bithumb, price) #매수 기능 추가(빗썸클래스, 현재가 객체 입력받음)
     print("매수!!", ret)
@@ -44,7 +44,7 @@ while True:
 
 
   
-  if mid = now:
+  if mid <= now <= mid + delta:
     ret = sell_crypto_currency(bithumb) #sell_crypto_currency함수에 bithumb객체전달 -> 매도
     print("매도", ret)
     목표가 = get_target_price()
