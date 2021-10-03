@@ -44,7 +44,7 @@ while True:
 
 
   
-  if mid = now
+  if mid = now:
     ret = sell_crypto_currency(bithumb) #sell_crypto_currency함수에 bithumb객체전달 -> 매도
     print("매도", ret)
     목표가 = get_target_price()
