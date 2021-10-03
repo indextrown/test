@@ -52,5 +52,5 @@ while True:
     목표가 = get_target_price()
     hold_flag = False
 
-  print(now, 목표가, price)
+  print("현재시간:", now ,"목표가:", 목표가, "현재가", price)
   time.sleep(1)
