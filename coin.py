@@ -39,12 +39,12 @@ while True:
 
 
   now = datetime.datetime.now()
-  mid = datetime.datetime(now.year, now.month, now.day, 13, 4, 0)
+  mid = datetime.datetime(now.year, now.month, now.day, 00, 0, 0)
   delta = datetime.timedelta(seconds=10)
 
 
   
-  if mid = now < mid + delta:  #자정이라면
+  if mid = now
     ret = sell_crypto_currency(bithumb) #sell_crypto_currency함수에 bithumb객체전달 -> 매도
     print("매도", ret)
     목표가 = get_target_price()
