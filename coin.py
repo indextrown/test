@@ -30,7 +30,7 @@ while True:
 
 
   
-   if 목표가 < price and hold_flag == False:#조건을 총족하면 매수
+  if 목표가 < price and hold_flag == False:#조건을 총족하면 매수
   
     ret = buy_cryto_currency(bithumb, price) #매수 기능 추가(빗썸클래스, 현재가 객체 입력받음)
     print("매수!!", ret)
