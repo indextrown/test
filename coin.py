@@ -1,9 +1,6 @@
-import pybithumb
-
 import time
-
 import datetime
-
+import pybithumb
 def get_target_price():  #목표가를 반환하는 함수  함수의 정의
 
   df = pybithumb.get_ohlcv("BTC") #비트코인의 ohlcv값 가져옴
