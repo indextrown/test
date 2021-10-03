@@ -27,21 +27,28 @@ hold_flag = False #매수했다면True 아니면 False
 while True:
 
   price = pybithumb.get_current_price("BTC") #비트코인의 현재가 얻어오기
-  if 목표가 <= price and hold_flag == False:#조건을 총족하면 매수
+
+
+  
+   #if 목표가 <= price and hold_flag == False:#조건을 총족하면 매수
+  if [ $목표가 -le $price ] and if [ $hold_flag -eq $False ] ; then
     ret = buy_cryto_currency(bithumb, price) #매수 기능 추가(빗썸클래스, 현재가 객체 입력받음)
     print("매수!!", ret)
     hold_flag = True
+  fi
 
 
   now = datetime.datetime.now()
   mid = datetime.datetime(now.year, now.month, now.day, 13, 4, 0)
   delta = datetime.timedelta(seconds=10)
 
-  if mid <= now <=mid + delta:  #자정이라면
+
+  if [ $mid -le $now -le $(mid + delta) ] ; then
+   #if mid <= now <=mid + delta:  #자정이라면
     ret = sell_crypto_currency(bithumb) #sell_crypto_currency함수에 bithumb객체전달 -> 매도
     print("매도", ret)
     목표가 = get_target_price()
     hold_flag = False
-
+  fi
   print("현재시간:", now + delta ,"목표가:", 목표가, "현재가", price)
   time.sleep(1)
