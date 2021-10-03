@@ -35,7 +35,7 @@ while True:
     ret = buy_cryto_currency(bithumb, price) #매수 기능 추가(빗썸클래스, 현재가 객체 입력받음)
     print("매수!!", ret)
     hold_flag = True
-  fi
+  
 
 
   now = datetime.datetime.now()
@@ -49,6 +49,6 @@ while True:
     print("매도", ret)
     목표가 = get_target_price()
     hold_flag = False
-  fi
+  
   print("현재시간:", now + delta ,"목표가:", 목표가, "현재가", price)
   time.sleep(1)
