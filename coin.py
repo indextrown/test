@@ -54,4 +54,26 @@ try:
       print("현재시간:", now + delta ,"목표가:", 목표가, "현재가", price)
       time.sleep(1)
 else:
-     
+     while True:
+       price = pybithumb.get_current_price("BTC")
+       if 목표가 <= price and hold_flag == False:
+         ret = buy_cryto_currency(bithumb, price)
+         print("매수!!", ret)
+         hold_flag = True
+       now = datetime.datetime.now()
+       mid = datetime.datetime(now.year, now.month, now.day, 00, 0, 0)
+       delta = datetime.timedelta(seconds=10)
+       if mid <= now <= mid + delta:
+         ret = sell_crypto_currency(bithumb)
+         print("매도", ret)
+         목표가 = get_target_price()
+         hold_flag = False
+       print("현재시간:", now + delta ,"목표가:", 목표가, "현재가", price)
+       time.sleep(1)
+         
+           
+       
+
+       
+        
+
