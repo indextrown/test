@@ -53,7 +53,7 @@ try:
   
       print("현재시간:", now + delta ,"목표가:", 목표가, "현재가", price)
       time.sleep(1)
-else:
+except:
      while True:
        price = pybithumb.get_current_price("BTC")
        if 목표가 <= price and hold_flag == False:
