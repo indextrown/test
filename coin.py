@@ -3,19 +3,19 @@ import time
 import datetime
 try:
     def get_target_price():  #목표가를 반환하는 함수  함수의 정의
-      df = pybithumb.get_ohlcv("BTC") #비트코인의 ohlcv값 가져옴
+      df = pybithumb.get_ohlcv("XEC") #비트코인의 ohlcv값 가져옴
       변동폭 = df.iloc[-2]['high'] - df.iloc[-2]['low']
       목표가 = df.iloc[-1]['open'] + 변동폭
       return 목표가
     #매수기능
     def buy_cryto_currency(bithumb, price): #전달받은 빗썸 객체 함수 안에서 밸런스 조회 가능
-      krw = bithumb.get_balance("BTC")[2]  #보유한 한화
+      krw = bithumb.get_balance("XEC")[2]  #보유한 한화
       unit = (krw * 0.7)/ price            #원화 나누기 현재가, 0.7은 수수료
-      return bithumb.buy_market_order("BTC", unit) #시장가 주문 사용, unit 개수만큼 구매
+      return bithumb.buy_market_order("XEC", unit) #시장가 주문 사용, unit 개수만큼 구매
 
     def sell_crypto_currency(bithumb):   #매도기능
-      unit = bithumb.get_balance("BTC")[0]  #잔고 얻어오기
-      return bithumb.sell_market_order("BTC", unit) #BTC unit만큼 팔아라
+      unit = bithumb.get_balance("XEC")[0]  #잔고 얻어오기
+      return bithumb.sell_market_order("XEC", unit) #BTC unit만큼 팔아라
 
     with open("bithumb.txt", "r") as f: #파일로부터 데이터 읽어옴
       key1 = f.readline().strip()       #파일을 읽어오고 양쪽 공백 제거
@@ -27,7 +27,7 @@ try:
 
     while True:
 
-      price = pybithumb.get_current_price("BTC") #비트코인의 현재가 얻어오기
+      price = pybithumb.get_current_price("XEC") #비트코인의 현재가 얻어오기
 
 
   
@@ -55,19 +55,19 @@ try:
       time.sleep(1)
 except:
      def get_target_price():  #목표가를 반환하는 함수  함수의 정의
-       df = pybithumb.get_ohlcv("BTC") #비트코인의 ohlcv값 가져옴
+       df = pybithumb.get_ohlcv("XEC") #비트코인의 ohlcv값 가져옴
        변동폭 = df.iloc[-2]['high'] - df.iloc[-2]['low']
        목표가 = df.iloc[-1]['open'] + 변동폭
        return 목표가
     #매수기능
      def buy_cryto_currency(bithumb, price): #전달받은 빗썸 객체 함수 안에서 밸런스 조회 가능
-       krw = bithumb.get_balance("BTC")[2]  #보유한 한화
+       krw = bithumb.get_balance("XEC")[2]  #보유한 한화
        unit = (krw * 0.7)/ price            #원화 나누기 현재가, 0.7은 수수료
-       return bithumb.buy_market_order("BTC", unit) #시장가 주문 사용, unit 개수만큼 구매
+       return bithumb.buy_market_order("XEC", unit) #시장가 주문 사용, unit 개수만큼 구매
 
      def sell_crypto_currency(bithumb):   #매도기능
-       unit = bithumb.get_balance("BTC")[0]  #잔고 얻어오기
-       return bithumb.sell_market_order("BTC", unit) #BTC unit만큼 팔아라
+       unit = bithumb.get_balance("XEC")[0]  #잔고 얻어오기
+       return bithumb.sell_market_order("XEC", unit) #BTC unit만큼 팔아라
 
      with open("bithumb.txt", "r") as f: #파일로부터 데이터 읽어옴
        key1 = f.readline().strip()       #파일을 읽어오고 양쪽 공백 제거
@@ -79,7 +79,7 @@ except:
 
      while True:
 
-       price = pybithumb.get_current_price("BTC") #비트코인의 현재가 얻어오기
+       price = pybithumb.get_current_price("XEC") #비트코인의 현재가 얻어오기
 
 
   
