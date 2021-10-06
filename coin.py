@@ -6,7 +6,7 @@ try:
       df = pybithumb.get_ohlcv("BTC") #비트코인의 ohlcv값 가져옴
       변동폭 = df.iloc[-2]['high'] - df.iloc[-2]['low']
       목표가 = df.iloc[-1]['open'] + 변동폭
-      return 0
+      return 목표가
     #매수기능
     def buy_cryto_currency(bithumb, price): #전달받은 빗썸 객체 함수 안에서 밸런스 조회 가능
       krw = bithumb.get_balance("BTC")[2]  #보유한 한화
