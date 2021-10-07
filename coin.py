@@ -1,5 +1,13 @@
 import pybithumb
 import time
+정보보안기사
+CEH(윤리적 해커)
+CHFI(포렌식 전문가)
+네트워크관리사
+리눅스마스터
+ISO 27001 인증심사원
+한국정보기술연구원(KITRI) 침해대응전문가 수료
+저는 사실 진로를 개발자로 전환한 케이스에요. 원래 정보보안 엔지니어
 import datetime
 try:
     def get_target_price():  #목표가를 반환하는 함수  함수의 정의
