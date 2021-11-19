@@ -140,7 +140,7 @@ for ticker in Tickers:
             
         time.sleep(0.05)
         #영상에선 1분봉으로 만들었지만 최종적으로 5분으로 변경해 봅니다
-        df = pyupbit.get_ohlcv(ticker,interval="minute5") #5분봉 데이타를 가져온다.
+        df = pyupbit.get_ohlcv(ticker,interval="minute3") #5분봉 데이타를 가져온다.
 
 
         #5일선 값을 구한다.
