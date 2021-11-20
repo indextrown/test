@@ -4,35 +4,16 @@ import time
 import pyupbit
 
 
-
 access = "eBxRxPC9YIZ637OxoI31039aWCx4YNa5TdAUJF6a"          # 본인 값으로 변경
-secret = "bnxPLUdOx8MWEiwpq37z99MKSCFDkztb4NXsZUox"            # 본인 값으로 변경
-upbit = pyupbit.Upbit(access, secret)
-
-'''
-영상에서는 1분봉을 보지만 거래대금 탑 코인을 구하는 로직 때문에 봇이 도는 시간이 1분이상 걸리는 경우가 생기기에
-이 코드 처럼 5분봉 이상을 보는 것을 추천드립니다.
-
-단독으로 쓸 경우를 대비해 물타는 로직도 추가했으니 제거하시거나 적절히 수정하셔서 사용해보세요!
-
-하락장 대비하는 것이 전략이라면
-단타시 많은 코인을 많은 비중으로 매수하는건 위험하니 조절해 보시면서 테스트 해보세요!
+secret= "bnxPLUdOx8MWEiwpq37z99MKSCFDkztb4NXsZUox"            # 본인 값으로 변경
 
 
-현재 코드가 5분봉을 보기에 크론탭에는 일단 아래처럼 5분 마다 동작하게 
-등록하면 되지만 어느 캔들(몇분 봉)을 보고 몇 분마다 돌릴지는 여러분 자유입니다.
-
-*/5 * * * * python3 /var/autobot/upbit_auto_bot_danta.py
-
-
-'''
 
 #업비트 객체를 만든다
 upbit = pyupbit.Upbit(access, secret)
 
-
 #내가 매수할 총 코인 개수
-MaxCoinCnt = 1.0
+MaxCoinCnt = 10.0
 
 #처음 매수할 비중(퍼센트)
 FirstRate = 10.0
