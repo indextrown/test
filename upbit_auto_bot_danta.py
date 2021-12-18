@@ -2,7 +2,9 @@
 import myUpbit   #우리가 만든 함수들이 들어있는 모듈
 import time
 import pyupbit
+import sys
 
+f = open('coinlog.txt', 'w')
 
 
 access = "eBxRxPC9YIZ637OxoI31039aWCx4YNa5TdAUJF6a"          # 본인 값으로 변경
@@ -40,14 +42,14 @@ FirstEnterMoney = CoinMaxMoney / 100.0 * FirstRate
 #그 이후 매수할 금액 
 WaterEnterMoeny = CoinMaxMoney / 100.0 * WaterRate
 
-print("-----------------------------------------------")
-print ("Total Money:", myUpbit.GetTotalMoney(balances))
-print ("Total Real Money:", myUpbit.GetTotalRealMoney(balances))
-print ("Total Revenue", TotalRevenue)
-print("-----------------------------------------------")
-print ("CoinMaxMoney : ", CoinMaxMoney)
-print ("FirstEnterMoney : ", FirstEnterMoney)
-print ("WaterEnterMoeny : ", WaterEnterMoeny)
+print("-----------------------------------------------", file=f)
+print ("Total Money:", myUpbit.GetTotalMoney(balances), file=f)
+print ("Total Real Money:", myUpbit.GetTotalRealMoney(balances), file=f)
+print ("Total Revenue", TotalRevenue, file=f)
+print("-----------------------------------------------", file=f)
+print ("CoinMaxMoney : ", CoinMaxMoney, file=f)
+print ("FirstEnterMoney : ", FirstEnterMoney, file=f)
+print ("WaterEnterMoeny : ", WaterEnterMoeny, file=f)
 
 
 
@@ -198,6 +200,7 @@ for ticker in Tickers:
 
             #시장가 매수를 한다.
             balances = myUpbit.BuyCoinMarket(upbit,ticker,FirstEnterMoney)
+            print("77777!!!!!", file=f)
 
             #평균매입단가와 매수개수를 구해서 0.5% 상승한 가격으로 지정가 매도주문을 걸어놓는다.
             avgPrice = myUpbit.GetAvgBuyPrice(balances,ticker)
@@ -217,6 +220,7 @@ for ticker in Tickers:
             
             #시장가 매수를 한다.
             balances = myUpbit.BuyCoinMarket(upbit,ticker,FirstEnterMoney)
+            print("go777", file=f)
 
             #평균매입단가와 매수개수를 구해서 0.5% 상승한 가격으로 지정가 매도주문을 걸어놓는다.
             avgPrice = myUpbit.GetAvgBuyPrice(balances,ticker)
