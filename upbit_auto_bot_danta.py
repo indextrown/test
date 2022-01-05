@@ -3,9 +3,10 @@ import myUpbit   #우리가 만든 함수들이 들어있는 모듈
 import time
 import pyupbit
 import sys
-
-f = open('coinlog.txt', 'w')
-
+import datetime
+f = open('coinlog.txt', 'a')
+now=datetime.datetime.now()
+print(now, file=f)
 
 access = "eBxRxPC9YIZ637OxoI31039aWCx4YNa5TdAUJF6a"          # 본인 값으로 변경
 secret = "bnxPLUdOx8MWEiwpq37z99MKSCFDkztb4NXsZUox"            # 본인 값으로 변경
@@ -200,7 +201,7 @@ for ticker in Tickers:
 
             #시장가 매수를 한다.
             balances = myUpbit.BuyCoinMarket(upbit,ticker,FirstEnterMoney)
-            print("77777!!!!!", file=f)
+            print("ma5<ma20 buy!!!!!!!!!", file=f)
 
             #평균매입단가와 매수개수를 구해서 0.5% 상승한 가격으로 지정가 매도주문을 걸어놓는다.
             avgPrice = myUpbit.GetAvgBuyPrice(balances,ticker)
@@ -220,7 +221,7 @@ for ticker in Tickers:
             
             #시장가 매수를 한다.
             balances = myUpbit.BuyCoinMarket(upbit,ticker,FirstEnterMoney)
-            print("go777", file=f)
+            print("rsi<30 GOGO BUY!!!", file=f)
 
             #평균매입단가와 매수개수를 구해서 0.5% 상승한 가격으로 지정가 매도주문을 걸어놓는다.
             avgPrice = myUpbit.GetAvgBuyPrice(balances,ticker)
